@@ -52,3 +52,15 @@ const filterLargeTransactions = (transactions, filterFunction) => {
     return transactions.filter(filterFunction); // Utilizes filter function to filter transactions above $1000
 }; // Declares a function that filters transactions
 console.log(filterLargeTransactions(transactions, amount => amount > 1000)); // Produces expected outputs of [1500, 3200, 2500]
+
+// Task 7: Shopping Cart Tracker
+function createCartTracker () {
+    let totalCartValue = 0; // Declares total cart values and sets it to zero
+    return function (item) {
+        totalCartValue += item; // Adds item to total cart value
+        return totalCartValue; // Returns total cart value
+    }; // Declares a function that adds items to total cart value
+}; // Declares a function that tracks cart value
+let cart = createCartTracker();
+console.log(`Total Cart Value: $${cart(20)}`); // Inputs values and produces expected output of $20
+console.log(`Total Cart Value: $${cart(35)}`); // Inputs values and produces expected output of $55
