@@ -45,3 +45,10 @@ function calculateLoanPayment (principal, rate, time) {
 }; // Declares a function that calculates loan payment
 calculateLoanPayment(1000, 0.05, 2); // Inputs values and produces expected output of $1100.00
 calculateLoanPayment(5000, 0.07, 3); // Inputs values and produces expected output of $6050.00
+
+// Task 6: Identifying Large Transactions
+let transactions = [200, 1500, 3200, 800, 2500]; // Initial transactions array
+const filterLargeTransactions = (transactions, filterFunction) => { 
+    return transactions.filter(filterFunction); // Utilizes filter function to filter transactions above $1000
+}; // Declares a function that filters transactions
+console.log(filterLargeTransactions(transactions, amount => amount > 1000)); // Produces expected outputs of [1500, 3200, 2500]
