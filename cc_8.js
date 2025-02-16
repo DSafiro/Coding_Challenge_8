@@ -61,6 +61,15 @@ function createCartTracker () {
         return totalCartValue; // Returns total cart value
     }; // Declares a function that adds items to total cart value
 }; // Declares a function that tracks cart value
-let cart = createCartTracker();
+let cart = createCartTracker(); // Declares budget by returning createCartTracker function
 console.log(`Total Cart Value: $${cart(20)}`); // Inputs values and produces expected output of $20
 console.log(`Total Cart Value: $${cart(35)}`); // Inputs values and produces expected output of $55
+
+// Task 8: Savings Growth Projection
+function calculateSavings (years, amount) {
+    if (years >= 10) return amount; // If years is greater or equal to 10 -> returns initial amount
+    projectedSavings = calculateSavings(years + 1, amount * 1.05); // Calculates projected savings by increasing amount by 5% until counter reaches year 10
+    return projectedSavings; // Returns projected savings
+}; // Declares a recursive function that calculates projected savings
+console.log(`Projected Savings: $${calculateSavings(8, 1000).toFixed(2)}`); // Inputs values and produces expected output of $1102.50
+console.log(`Projected Savings: $${calculateSavings(5, 5000).toFixed(2)}`); // Inputs values and produces expected output of $6381.41
